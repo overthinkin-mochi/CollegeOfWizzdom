@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://1tr8f0prya0c"]
+
+[ext_resource type="Script" path="res://Scripts/BattleMode/StagePanel.gd" id="1_3gs0b"]
+
+[node name="StagePanel" type="Node3D"]
+script = ExtResource("1_3gs0b")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(4, 0.5, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D"]

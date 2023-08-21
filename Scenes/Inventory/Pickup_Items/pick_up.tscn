@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://i3itjxp5jh87"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/pick_up.gd" id="1_70h1k"]
+[ext_resource type="Texture2D" uid="uid://dvs0ye0y68752" path="res://assets/Sprites/Items/CardPlaceholder.png" id="1_v13da"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6kfcu"]
+radius = 0.336592
+
+[node name="PickUp" type="RigidBody3D"]
+collision_layer = 0
+script = ExtResource("1_70h1k")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_v13da")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6kfcu")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_6kfcu")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

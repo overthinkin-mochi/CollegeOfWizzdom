@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpowlvipooluj"]
+
+[ext_resource type="Script" path="res://Scripts/Player/BattlePlayer.gd" id="1_u4s8h"]
+[ext_resource type="SpriteFrames" uid="uid://bdl83o1b4p6h7" path="res://assets/Animations/Kuro.tres" id="2_yk0fp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6hhp4"]
+
+[node name="BattlePlayer" type="CharacterBody3D"]
+script = ExtResource("1_u4s8h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_6hhp4")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784339, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Visuals/MeshInstance3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = ExtResource("2_yk0fp")
+animation = &"Running"
+frame_progress = 0.719065

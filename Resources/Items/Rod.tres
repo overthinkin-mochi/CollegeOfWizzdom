@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemDataEquip" load_steps=3 format=3 uid="uid://bmcxlri8rwuug"]
+
+[ext_resource type="Script" path="res://Resources/Items/item_data_equip.gd" id="1_qfh72"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i6mts"]
+load_path = "res://.godot/imported/WeaponPlaceholder.png-8b006d99dca937ad7fa9e67805362a26.ctex"
+
+[resource]
+script = ExtResource("1_qfh72")
+attack = 5
+defence = 0
+speed = 0
+health = 0
+name = "Rod"
+description = "Baston que sirve para lanzar un ataque simple"
+id = 0
+stackable = false
+texture = SubResource("CompressedTexture2D_i6mts")
