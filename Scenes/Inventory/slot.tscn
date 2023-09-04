@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Inventory/slot.gd" id="1_f6oqr"]
 
 [node name="Slot" type="PanelContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
