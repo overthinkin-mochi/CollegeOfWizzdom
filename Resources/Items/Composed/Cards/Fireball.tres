@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://6ipcjfrryj23"]
+
+[ext_resource type="Script" path="res://Resources/Items/CardData.cs" id="1_b2n4l"]
+
+[resource]
+script = ExtResource("1_b2n4l")
+CardId = 1
+CardLevel = 0
+CardName = "Fireball"
+CardDescription = "Dispara un proyectil que al impactar daña a enemigos adjacentes"
+CardDamage = 80
+CardCost = 2
+CardValue = 500
+ElementType = 5

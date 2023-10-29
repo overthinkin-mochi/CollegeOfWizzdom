@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnqqejykioaw8"]
+
+[ext_resource type="PackedScene" uid="uid://ihcm7bdc41y2" path="res://Scenes/BattleGround/StageField.tscn" id="1_n2gfw"]
+[ext_resource type="Script" path="res://Scripts/BattleMode/BattleStage.cs" id="1_rh5av"]
+[ext_resource type="PackedScene" uid="uid://dpowlvipooluj" path="res://Scenes/Player/battlePlayer.tscn" id="3_petee"]
+[ext_resource type="Resource" uid="uid://d3d7ugmsqms6u" path="res://Resources/Items/Composed/Weapons/BasicMelee.tres" id="4_gls1w"]
+[ext_resource type="PackedScene" uid="uid://b0l4pxmgde4rw" path="res://Scenes/BattleGround/Interface/BattlePlayerHud.tscn" id="4_hwhka"]
+
+[node name="BattleStage" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_rh5av")
+
+[node name="StageField" parent="." instance=ExtResource("1_n2gfw")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="BattlePlayer" parent="." node_paths=PackedStringArray("OwnedField") instance=ExtResource("3_petee")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.496432, 0.124424, -2.6373)
+MoveSpeed = 0.2
+MaxHealth = 100
+CurrentHealth = 100
+MaxMana = 100
+CurrentMana = 75
+attack = 1
+OwnedField = NodePath("../StageField")
+CurrentRow = 1
+CurrentColumn = 4
+equippedWeapon = ExtResource("4_gls1w")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-3.18652e-08, 0.694294, -0.719692, 2.44011e-08, 0.719692, 0.694294, 1, 4.56254e-09, -3.98746e-08, -2.92047, 2.73954, -2.09368e-08)
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0467644, -0.1, 0)
+size = Vector3(5, 0.1, 10)
+
+[node name="LeftWall" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0459151, 1.19511, -4.95042)
+size = Vector3(5, 2.5, 0.1)
+
+[node name="RightWall" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0459151, 1.19511, 4.94958)
+size = Vector3(5, 2.5, 0.1)
+
+[node name="BackgroundObject" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84373, 0.7445, 3.4)
+size = Vector3(0.1, 2, 3)
+
+[node name="BackgroundObject2" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84373, 0.7445, -3.4)
+size = Vector3(0.1, 2, 3)
+
+[node name="BackgroundObject3" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.5, -4.15181)
+
+[node name="BackgroundWall" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48829, 1.2, 0)
+size = Vector3(0.1, 2.5, 10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Background"]
+transform = Transform3D(0.963083, 0.0484627, -0.264807, 6.1425e-09, 0.983663, 0.180021, 0.269206, -0.173375, 0.947349, -6.36031, 7.29188, 5.11594)
+
+[node name="BackgroundObject4" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -4.25181)
+size = Vector3(5, 0.5, 2)
+
+[node name="BackgroundObject5" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49012e-08, -4.05181)
+size = Vector3(5, 0.2, 2)
+
+[node name="BackgroundObject6" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0.5, 3.69227)
+
+[node name="BackgroundObject7" type="CSGBox3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.9, 3.69227)
+size = Vector3(0.5, 2, 0.5)
+
+[node name="BattleHud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerOneHud" parent="BattleHud" node_paths=PackedStringArray("player") instance=ExtResource("4_hwhka")]
+layout_mode = 1
+player = NodePath("../../BattlePlayer")
+playerNumber = 1
+
+[node name="PlayerTwoHud" parent="BattleHud" instance=ExtResource("4_hwhka")]
+layout_direction = 2
+layout_mode = 1
+offset_left = 1152.0
+offset_right = 1152.0
+playerNumber = 2

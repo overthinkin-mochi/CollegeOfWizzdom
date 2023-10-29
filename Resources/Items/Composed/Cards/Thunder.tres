@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://0aunpsmrfy7w"]
+
+[ext_resource type="Script" path="res://Resources/Items/CardData.cs" id="1_bq3n0"]
+
+[resource]
+script = ExtResource("1_bq3n0")
+CardId = 3
+CardLevel = 0
+CardName = "Thunder"
+CardDescription = "Lanza un rayo que cae en la tercera casilla frente al personaje"
+CardDamage = 70
+CardCost = 1
+CardValue = 400
+ElementType = 2

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d3d7ugmsqms6u"]
+
+[ext_resource type="Script" path="res://Resources/Inventory/WeaponData.cs" id="1_ery6y"]
+[ext_resource type="PackedScene" uid="uid://b8yflp4xcbohk" path="res://Scenes/BattleGround/Projectile/ProjectileTest.tscn" id="1_vi05a"]
+
+[resource]
+script = ExtResource("1_ery6y")
+weaponType = 0
+Attack = 10
+Speed = 4.0
+Projectile = ExtResource("1_vi05a")
+Name = ""
+Description = ""
+Id = 0
+Stackable = false
