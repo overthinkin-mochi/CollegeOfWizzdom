@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://1tr8f0prya0c"]
+[gd_scene load_steps=3 format=3 uid="uid://ciy6143mo6xvm"]
 
-[ext_resource type="Script" path="res://Scripts/BattleMode/StagePanel.gd" id="1_3gs0b"]
+[ext_resource type="Script" path="res://Scripts/BattleMode/BattlePanel.cs" id="1_f2ia1"]
+[ext_resource type="Material" uid="uid://en0a3hkylciw" path="res://materiales/Floor_Texture.tres" id="2_vaggq"]
 
-[node name="StagePanel" type="Node3D"]
-script = ExtResource("1_3gs0b")
+[node name="BattlePanel" type="Node3D"]
+script = ExtResource("1_f2ia1")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(4, 0.5, 4)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+skeleton = NodePath("CSGBox3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="MeshInstance3D"]
+material_override = ExtResource("2_vaggq")
+size = Vector3(1, 0.1, 1)

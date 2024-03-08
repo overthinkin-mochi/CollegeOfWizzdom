@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemDataWeapon" load_steps=3 format=3 uid="uid://dw3bv5psjrrvx"]
+
+[ext_resource type="Script" path="res://Resources/Items/item_data_weapon.gd" id="1_o8l61"]
+[ext_resource type="Texture2D" uid="uid://dqep834jt51n0" path="res://assets/Sprites/Items/MeleePlaceholder.png" id="2_y7ab3"]
+
+[resource]
+script = ExtResource("1_o8l61")
+Attack = 0
+Speed = 0
+weaponType = 0
+name = "Sword"
+description = "A sword in case you run out of magic"
+id = 3
+stackable = false
+texture = ExtResource("2_y7ab3")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=4 format=3 uid="uid://c5mrfhdy1u1yw"]
+
+[ext_resource type="Texture2D" uid="uid://dmbm0sps0mrwc" path="res://assets/Sprites/VFX/Firebolt SpriteSheet.png" id="1_2o3vy"]
+[ext_resource type="Script" path="res://Resources/Battle/ProjectileData.cs" id="1_o21r2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msbpj"]
+atlas = ExtResource("1_2o3vy")
+
+[resource]
+script = ExtResource("1_o21r2")
+Damage = 10
+Speed = 5.0
+_direction = Vector3(1, 0, 0)
+ProjectileTexture = SubResource("AtlasTexture_msbpj")

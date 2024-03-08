@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bk8er21hlkteq"]
+
+[ext_resource type="Script" path="res://Resources/Items/CardData.cs" id="1_avmbk"]
+
+[resource]
+script = ExtResource("1_avmbk")
+CardId = 2
+CardLevel = 0
+CardName = "Iceshards"
+CardDescription = "Ataque que afecta un area conica frente al personaje"
+CardDamage = 40
+CardCost = 3
+CardValue = 350
+ElementType = 4

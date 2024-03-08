@@ -1,6 +1,8 @@
 extends ItemData
 class_name ItemDataWeapon
 
-@export var baseDamage: int
-@export var coldown: int
-@export var weapon_type: String = ""
+enum WeaponType {MELEE ,THROWABLE ,RANGED ,MAGIC}
+
+@export var Attack: int
+@export var Speed: int
+@export var weaponType: WeaponType

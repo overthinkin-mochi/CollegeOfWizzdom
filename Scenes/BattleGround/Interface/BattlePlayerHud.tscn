@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0l4pxmgde4rw"]
+
+[ext_resource type="Texture2D" uid="uid://c4ufjty8kuy5o" path="res://assets/Sprites/Characters/Kuro/kuro-mugshot.png" id="1_t5wru"]
+[ext_resource type="Script" path="res://Scenes/BattleGround/Interface/BattlePlayerHud.cs" id="1_yv7nx"]
+[ext_resource type="Texture2D" uid="uid://dfb2xwmdcoyoh" path="res://assets/Sprites/Battle/mugshot-border.png" id="2_7cdbs"]
+[ext_resource type="Texture2D" uid="uid://bpbuukyoe0p0" path="res://assets/Sprites/Battle/ManaBarFill.png" id="3_3jhoj"]
+[ext_resource type="Texture2D" uid="uid://del6oqjvhdrt4" path="res://assets/Sprites/Battle/ManaBarFrame.png" id="4_g2ft6"]
+[ext_resource type="Texture2D" uid="uid://gw2nh33r5jod" path="res://assets/Sprites/Battle/HpBar.png" id="5_qiadb"]
+[ext_resource type="Texture2D" uid="uid://bcn6rcampmte5" path="res://assets/Sprites/Battle/HpBarFrame.png" id="6_ynkfp"]
+
+[node name="PlayerHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.7, 1.7)
+script = ExtResource("1_yv7nx")
+
+[node name="Mugshot" type="Node2D" parent="."]
+position = Vector2(8.23529, 5.29412)
+skew = -0.261799
+
+[node name="MugshotSprite" type="Sprite2D" parent="Mugshot"]
+position = Vector2(73.7926, 33.4636)
+texture = ExtResource("1_t5wru")
+
+[node name="MugshotBorder" type="Sprite2D" parent="Mugshot"]
+position = Vector2(73.7295, 33.8105)
+scale = Vector2(0.997787, 0.980915)
+texture = ExtResource("2_7cdbs")
+
+[node name="Bars" type="Node2D" parent="."]
+position = Vector2(8.23529, 6.60371)
+skew = -0.174533
+
+[node name="ManaBar" type="TextureProgressBar" parent="Bars"]
+offset_left = 7.0
+offset_top = 70.0
+offset_right = 161.0
+offset_bottom = 93.0
+rotation = -6.28319
+min_value = 1.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 16
+stretch_margin_right = 16
+stretch_margin_bottom = 3
+texture_under = ExtResource("3_3jhoj")
+texture_over = ExtResource("4_g2ft6")
+texture_progress = ExtResource("3_3jhoj")
+tint_under = Color(0.129412, 0.298039, 0.615686, 1)
+tint_progress = Color(0.341176, 0.352941, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="HpBar" type="TextureProgressBar" parent="Bars"]
+offset_left = 16.0
+offset_top = 69.0
+offset_right = 155.0
+offset_bottom = 87.0
+rotation = -6.28319
+min_value = 1.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 3
+stretch_margin_right = 10
+stretch_margin_bottom = 3
+texture_under = ExtResource("5_qiadb")
+texture_over = ExtResource("6_ynkfp")
+texture_progress = ExtResource("5_qiadb")
+tint_under = Color(0.34902, 0.141176, 0.227451, 1)
+tint_progress = Color(0.372549, 0.639216, 0.27451, 1)
+metadata/_edit_use_anchors_ = true

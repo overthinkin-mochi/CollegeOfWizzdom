@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDataWeapon" load_steps=2 format=3 uid="uid://47pufrgor46y"]
+
+[ext_resource type="Script" path="res://Resources/Items/item_data_weapon.gd" id="1_eepx0"]
+
+[resource]
+script = ExtResource("1_eepx0")
+Attack = 0
+Speed = 0
+weaponType = 0
+name = ""
+description = ""
+id = 0
+stackable = false
