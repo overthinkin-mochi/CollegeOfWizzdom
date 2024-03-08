@@ -27,7 +27,7 @@ public partial class BattlePlayerHud : Control
         updateMana(player.CurrentMana);
 
         if(playerNumber == 2){
-            this.Position = new Vector2(1152,0);
+            this.GlobalPosition = new Vector2(1152,0);
             this.Scale = new Vector2(-1.7f,1.7f);
         }
 	}

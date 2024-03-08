@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcodu3xw0onnl"]
 
-[ext_resource type="Script" path="res://Scripts/bGames/bGames.gd" id="1_4ciss"]
+[ext_resource type="Script" path="res://Scenes/Menus/LoginMenu.cs" id="1_mt718"]
 [ext_resource type="FontFile" uid="uid://duosha27byva" path="res://assets/Fonts/GohuFont14NerdFontPropo-Regular.ttf" id="2_l5hrm"]
 
 [node name="LoginMenu" type="Control"]
@@ -10,21 +10,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4ciss")
+script = ExtResource("1_mt718")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 270.0
-offset_bottom = 116.0
+offset_left = 858.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 140.0
 color = Color(0, 0, 0, 1)
 
 [node name="Password_field" type="TextEdit" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 6.0
-offset_top = 40.0
-offset_right = 262.0
-offset_bottom = 72.0
+offset_left = 864.0
+offset_top = 64.0
+offset_right = 1120.0
+offset_bottom = 96.0
 mouse_force_pass_scroll_events = false
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 2
@@ -39,10 +41,10 @@ text_direction = 1
 [node name="Username_field" type="TextEdit" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 6.0
-offset_top = 5.0
-offset_right = 262.0
-offset_bottom = 37.0
+offset_left = 864.0
+offset_top = 29.0
+offset_right = 1120.0
+offset_bottom = 61.0
 mouse_force_pass_scroll_events = false
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 2
@@ -56,10 +58,10 @@ text_direction = 1
 [node name="LoginButton" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 7.0
-offset_top = 77.0
-offset_right = 107.0
-offset_bottom = 109.0
+offset_left = 865.0
+offset_top = 101.0
+offset_right = 965.0
+offset_bottom = 133.0
 theme_override_constants/outline_size = 0
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("2_l5hrm")
@@ -68,10 +70,10 @@ text = "Login"
 
 [node name="StatusLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 77.0
-offset_right = 262.0
-offset_bottom = 109.0
+offset_left = 972.0
+offset_top = 101.0
+offset_right = 1120.0
+offset_bottom = 133.0
 theme_override_font_sizes/font_size = 12
 
 [node name="LoginRequest" type="HTTPRequest" parent="."]
@@ -81,6 +83,6 @@ theme_override_font_sizes/font_size = 12
 [node name="PostRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="LoginButton" to="." method="_on_login_button_pressed"]
-[connection signal="request_completed" from="LoginRequest" to="." method="_on_login_request_request_completed"]
-[connection signal="request_completed" from="GetRequest" to="." method="_on_get_request_request_completed"]
-[connection signal="request_completed" from="PostRequest" to="." method="_on_post_request_request_completed"]
+[connection signal="request_completed" from="LoginRequest" to="." method="OnLoginCompleted"]
+[connection signal="request_completed" from="GetRequest" to="." method="OnGetCompleted"]
+[connection signal="request_completed" from="PostRequest" to="." method="OnPostCompleted"]

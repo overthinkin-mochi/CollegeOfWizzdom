@@ -1,30 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnqqejykioaw8"]
+[gd_scene load_steps=5 format=3 uid="uid://dnqqejykioaw8"]
 
 [ext_resource type="PackedScene" uid="uid://ihcm7bdc41y2" path="res://Scenes/BattleGround/StageField.tscn" id="1_n2gfw"]
 [ext_resource type="Script" path="res://Scripts/BattleMode/BattleStage.cs" id="1_rh5av"]
 [ext_resource type="PackedScene" uid="uid://dpowlvipooluj" path="res://Scenes/Player/battlePlayer.tscn" id="3_petee"]
-[ext_resource type="Resource" uid="uid://d3d7ugmsqms6u" path="res://Resources/Items/Composed/Weapons/BasicMelee.tres" id="4_gls1w"]
 [ext_resource type="PackedScene" uid="uid://b0l4pxmgde4rw" path="res://Scenes/BattleGround/Interface/BattlePlayerHud.tscn" id="4_hwhka"]
 
 [node name="BattleStage" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_rh5av")
+playerScene = ExtResource("3_petee")
 
 [node name="StageField" parent="." instance=ExtResource("1_n2gfw")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="BattlePlayer" parent="." node_paths=PackedStringArray("OwnedField") instance=ExtResource("3_petee")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.496432, 0.124424, -2.6373)
-MoveSpeed = 0.2
-MaxHealth = 100
-CurrentHealth = 100
-MaxMana = 100
-CurrentMana = 75
-attack = 1
-OwnedField = NodePath("../StageField")
-CurrentRow = 1
-CurrentColumn = 4
-equippedWeapon = ExtResource("4_gls1w")
+[node name="SpawnPoints" type="Node3D" parent="StageField"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="0" type="Node3D" parent="StageField/SpawnPoints" groups=["SpawnPoints"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
+
+[node name="1" type="Node3D" parent="StageField/SpawnPoints" groups=["SpawnPoints"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1.5)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-3.18652e-08, 0.694294, -0.719692, 2.44011e-08, 0.719692, 0.694294, 1, 4.56254e-09, -3.98746e-08, -2.92047, 2.73954, -2.09368e-08)
@@ -82,14 +78,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PlayerOneHud" parent="BattleHud" node_paths=PackedStringArray("player") instance=ExtResource("4_hwhka")]
+[node name="PlayerOneHud" parent="BattleHud" instance=ExtResource("4_hwhka")]
 layout_mode = 1
-player = NodePath("../../BattlePlayer")
-playerNumber = 1
 
 [node name="PlayerTwoHud" parent="BattleHud" instance=ExtResource("4_hwhka")]
 layout_direction = 2
 layout_mode = 1
 offset_left = 1152.0
+offset_top = -7.15256e-07
 offset_right = 1152.0
-playerNumber = 2
+offset_bottom = 0.0
+scale = Vector2(-1.7, 1.7)
+playerNumber = 1

@@ -25,6 +25,8 @@ GameManager="*res://Scripts/Globals/GameManager.gd"
 GameSettings="*res://Scripts/Globals/GameSettings.gd"
 AudioManager="*res://Scripts/Globals/AudioManager.gd"
 SaveManager="*res://Scripts/Globals/SaveManager.gd"
+MultiplayerManager="*res://Scripts/Globals/MultiplayerManager.cs"
+BGamesManager="*res://Scripts/Globals/bGamesManager.cs"
 
 [dotnet]
 
