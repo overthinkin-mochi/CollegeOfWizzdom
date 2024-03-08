@@ -52,7 +52,6 @@ func spend_attribute(attribute_index, amount):
 	else:
 		print("no se tienen los puntos suficientes")
 
-
 func _on_login_request_request_completed(result, response_code, headers:Array, body:PackedByteArray):
 	if response_code == 200 :
 		_isLogged = true
